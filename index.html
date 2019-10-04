@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Time and Motion</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <!-- Container for entire body -->
+    <div class="container-fluid main">
+      
+
+        <!-- Container for heading-->
+      <div class="Heading">
+            <h1>Time and Motion</h1>
+      </div>
+
+        <!-- Container for Time in Office -->
+
+      <div class="Clock top-container container">
+        <h2>Clock</h2>
+          <h3 class="Time-in-office"> Time In Office </h3> 
+            <div class="In-office row">
+              <div class="col-md-4"> 
+                <h4><button type="button" class="btn btn-primary" id="office-timer-start">Start Timer</button></h4>
+                <p> <span> Logged in at </span> <span id="loginTime">00:00</span></p> 
+              </div> 
+              <div class="col-md-4">
+                <h4><button type="button" class="btn btn-primary" id="office-timer-end">End Timer</button></h4> 
+              </div>
+              <div class="col-md-4">
+                <h4>Duration</h4>
+                <p id="loginHours">0</p> 
+              </div>
+            </div>
+      </div>
+        <hr>
+
+        <!-- Container for various activities -->
+        
+      <div class="activities middle-container container">
+        <h3> Time spent in various activities </h3>
+          <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm bg-primary text-white">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Production</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Total Duration</li>
+                  <li> <p id="productionHours">0</p></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="card mb-4 shadow-sm text-white bg-secondary">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Break</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Total Duration</li>
+                  <li><p id="breakHours">0</p></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="card mb-4 shadow-sm text-white bg-dark">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Auxiliary</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Total Duration</li>
+                  <li><p id="auxHours">0</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+        <hr>
+      
+      <!-- Container for Activities -->
+
+      <div class=" second- middle-container">
+        <h2>Activities</h2>
+          <div class="activity-radios">
+            <div class="custom-control custom-radio custom-control-inline act-name">
+              <input type="radio" id="Production" name="Acts" class="custom-control-input Production currentAct" value="inProduction">
+                <label class="custom-control-label" for="Production">Production</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline act-name">
+              <input type="radio" id="Break" name="Acts" class="custom-control-input Break currentAct" value="inBreak">
+                <label class="custom-control-label" for="Break">Break</label>
+              </div>
+            <div class="custom-control custom-radio custom-control-inline act-name currentAct" value="inAux">
+              <input type="radio" id="Auxiliary" name="Acts" class="custom-control-input Auxiliary">
+                <label class="custom-control-label" for="Auxiliary">Auxiliary</label>
+            </div>
+          </div>
+      </div>
+    
+        <!-- Container for Timers -->
+      <div class="Timer-main bottom-container">
+            <h2 class="Timer-heading">Timers</h2>
+            <div class="timers row">
+              <div class="col-md-4"> 
+                <h4><button type="button" class="btn btn-primary" id="timer-start">Start Timer</button></h4>
+              </div> 
+              <div class="col-md-4">
+                <h4><button type="button" class="btn btn-primary" id="timer-end">End Timer</button></h4> 
+              </div>
+              <div class="col-md-4">
+                <h4>Duration</h4>
+                <p id="duration">0</p> 
+              </div>
+            </div>
+            <div class="Reset">
+                <button type="button" class="btn btn-secondary btn-lg Reset">Reset</button>
+            </div>
+          <div class="footer">
+            <a class="footer-link" href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">LinkedIn</a>
+            <a class="footer-link" href="https://www.instagram.com/bluemoon_rakesh/"target="_blank">Instagram</a>
+            <a class="footer-link" href="https://www.facebook.com/rakesh.sahu.1401933"target="_blank">Facebook</a>
+            <p class= "copyright">© 2019 Rakesh Sahu</p>
+          </div>
+      </div>
+    </div>
+
+        <script src="index.js" async defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
