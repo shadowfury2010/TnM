@@ -14,6 +14,7 @@ function setup() {
  var productionHours=0;
  var breakHours=0;
  var auxHours=0;
+ var wellnessHours=0;
  var currentAct = document.getElementsByName("Acts");
  var currentCount;
   
@@ -45,7 +46,7 @@ endBtnOffice.addEventListener("click",function(){
   //on button click start counter for Activities
   
     startBtnActivity.addEventListener("click",function () {
-      if (currentAct[0].checked || currentAct[1].checked || currentAct[2].checked) {
+      if (currentAct[0].checked || currentAct[1].checked || currentAct[2].checked || currentAct[3].checked) {
         if (activityCounter==="00:00:00" || activityCounter === 0){
           activityIntervalId = setInterval(function() {
             activityCounter ++;
@@ -81,7 +82,14 @@ endBtnOffice.addEventListener("click",function(){
    else if (currentAct[2].checked) {
     auxHours= auxHours+activityCounter;
     document.querySelector("#auxHours").innerHTML=hourCalculator(auxHours);
-   } else 
+   } 
+   
+   else if (currentAct[3].checked) {
+    wellnessHours= wellnessHours+activityCounter;
+    document.querySelector("#wellnessHours").innerHTML=hourCalculator(wellnessHours);
+   } 
+   
+   else 
    {
      alert("Please select an Activity i.e. Production or Break or Auxiliary");
    }
@@ -91,11 +99,13 @@ endBtnOffice.addEventListener("click",function(){
  //Reset the Activity Counter when clicked on Reset button 
 
  var reset = document.querySelector(".Reset");
- reset.addEventListener("click", function (){
-   var resetCount= 0;
-   duration.innerHTML=resetCount;
-   activityCounter=0;
- });
+ reset.addEventListener("click", resetCounter);
+
+//  function (){
+//   var resetCount= 0;
+//   duration.innerHTML=resetCount;
+//   activityCounter=0;
+// }
 
 
 //Convert seconds to Minutes & hours
@@ -109,6 +119,11 @@ function hourCalculator (s) {
   return currentCount;
 }
 
+function resetCounter (){
+  var resetCount= 0;
+   duration.innerHTML=resetCount;
+   activityCounter=0;
+}
 
 }
 
